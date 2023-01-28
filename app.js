@@ -43,6 +43,10 @@ app.use('/api/v1/jobs', authenticateUser, jobRouters);
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
+app.get('/', (req, res)=>{
+res.send("Jpbs API");
+});
+
 const port = process.env.PORT || 5000;
 
 const start = async () => {
