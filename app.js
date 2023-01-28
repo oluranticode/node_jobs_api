@@ -11,7 +11,7 @@ const express = require('express');
 const app = express();
 
 // error handler
-const notFoundMiddleware = require('./middleware/not-found');
+// const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
 // authentication
 const authenticateUser = require('./middleware/authentication');
@@ -40,7 +40,7 @@ app.use('/api/v1/auth', authRouters); //domian_name/api/v1/auth...
 app.use('/api/v1/jobs', authenticateUser, jobRouters);
 
 
-app.use(notFoundMiddleware);
+// app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
 app.get('/', (req, res)=>{
